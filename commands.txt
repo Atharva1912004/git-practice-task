@@ -1,0 +1,40 @@
+git clone https://github.com/Atharva1912004/git-practice-task.git
+cd git-practice-task
+
+git add README.md
+git commit -m "Initial commit - added README"
+
+git checkout -b dev
+git checkout -b feature/login
+
+New-Item login.txt
+git add login.txt
+git commit -m "Added login feature file"
+
+git checkout dev
+git merge feature/login
+
+git checkout main
+New-Item conflict.txt
+git add conflict.txt
+git commit -m "Added conflict file in main"
+
+git checkout dev
+New-Item conflict.txt
+git add conflict.txt
+git commit -m "Updated conflict file in dev"
+
+git merge main
+git add conflict.txt
+git commit -m "Resolved merge conflict"
+
+git branch --set-upstream-to=origin/main main
+
+git push origin main
+git push origin dev
+git push origin feature/login
+
+New-Item commands.txt
+git add commands.txt
+git commit -m "Added commands proof"
+git push origin main
